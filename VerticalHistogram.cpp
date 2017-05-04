@@ -47,7 +47,7 @@ int main(int argc, char * argv[])
 //graph header
          cout << endl << "Graph:" << endl;
          cout << endl;
-         cout << ' ' << endl << endl;;
+
 //generate histogram
           for ( int i = 25; i > 0; i-- )
             {

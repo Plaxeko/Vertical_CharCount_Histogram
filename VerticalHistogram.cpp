@@ -13,6 +13,7 @@ int main(int argc, char * argv[])
 
         int total[26] = {0};
         int c ;
+        
 //count char frequency in file
         while ( ! cin.eof() )
         {
@@ -20,23 +21,18 @@ int main(int argc, char * argv[])
             if (isalpha(c))
             {
                 c = tolower(c);
-                int index = c - 'a';  // index in range 0 to 25;
-                total[index]++;       // increment total
+                int index = c - 'a';
+                total[index]++;
             }
         }
 
 //print count
         for (int i = 0; i < 26; i++)
         {
-          if ( i <= 9)
-            {
-            cout << "count" << "[ "  << i << "]:" << setw(2) << total[i] << endl;
-            } else {
-             cout << "count" << "["  << i << "]:" << setw(2) << total[i] << endl;
-            }
+        cout  << "count" << "[" << setw(2) << i << "]: " << total[i] << endl;
         }
-
         int max = total[0];
+
 //get max
         for(int j = 0; j < 26; j++ )
         {
@@ -45,27 +41,19 @@ int main(int argc, char * argv[])
              max = total[j];
            }
         }
-          cout << max << endl;
+          cout << endl;
+          cout <<  "max: " <<max << endl;
 
 //graph header
          cout << endl << "Graph:" << endl;
-
-        for( char i = 'a'; i <= 'z'; i++ )
-        {
-            cout << i << " ";
-        }
-        
+         cout << endl;
          cout << ' ' << endl << endl;;
-
 //generate histogram
-          for ( int i = 0; i < 25; i++ )
+          for ( int i = 25; i > 0; i-- )
             {
-              int &display = i;
-//            cout << display;
                      for( char lines = 0; lines < 26; lines++ )
                     {
-
-                        if( total[lines] > max * i / 25 )
+                        if( total[lines] >  max * i / 25 )
                           {
                         cout << "* ";
                           }
@@ -78,7 +66,11 @@ int main(int argc, char * argv[])
              cout << endl;
             }
 
+          // printf("_\n");
+           for( char i = 'a'; i <= 'z'; i++ ){
+                printf( "%c ", i);
+                }
+                printf("\n\n");
         return 0;
-
 }
 
